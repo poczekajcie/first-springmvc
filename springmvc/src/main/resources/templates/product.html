@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css}" rel="stylesheet" media="screen">
+    <script th:href="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+    <link th:href="@{static/spring-core.css}" rel="stylesheet" media="screen">
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Spring MVC - Product</title>
 </head>
 <body>
-$END$
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Show Product</h2>
+        </div>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Product Id:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${product.id}">Product Id</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Description:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${product.description}">Description</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Price:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${product.price}">Price</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Image URL:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${product.imageURL}">Image URL</p>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <a th:href="${'/products'}">Back</a>
+    </div>
+</div>
 </body>
 </html>
