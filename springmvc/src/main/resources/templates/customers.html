@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css}" rel="stylesheet" media="screen">
+    <script th:href="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+    <link th:href="@{static/spring-core.css}" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <title>Spring MVC - Customers</title>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(customers)}">
+        <h2>Customers List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Options</th>
+            </tr>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.phoneNumber}"></td>
+                <td>
+                    <span th:text="${customer.addressLineOne}"></span>
+                    <br>
+                    <span th:text="${customer.addressLineTwo}"></span>
+                </td>
+                <td th:text="${customer.city}"></td>
+                <td th:text="${customer.state}"></td>
+                <td th:text="${customer.zipCode}"></td>
+                <td>
+                    <a th:href="${'/customer/' + customer.id}">Details</a>
+                    <span> | </span>
+                    <a th:href="${'/customer/edit/' + customer.id}">Edit</a>
+                    <span> | </span>
+                    <a th:href="${'/customer/delete/' + customer.id}">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <a th:href="${'/customer/new'}">New Customer</a>
+    </div>
+</div>
+</body>
+</html>

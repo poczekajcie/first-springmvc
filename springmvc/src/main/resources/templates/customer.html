@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css}" rel="stylesheet" media="screen">
+    <script th:href="@{/webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+    <link th:href="@{static/spring-core.css}" rel="stylesheet" media="screen">
+    <meta charset="UTF-8">
+    <title>Spring MVC - Customer</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Show Customer</h2>
+        </div>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Customer Id:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.id}">Customer Id</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">First Name:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.firstName}">Customer First Name</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Last Name:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.lastName}">Customer Last Name</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Email:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.email}">Customer Email</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Phone Number:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.phoneNumber}">Customer Phone Number</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Address:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.addressLineOne}">Customer Address</p>
+                <p class="form-control-plaintext" th:text="${customer.addressLineTwo}">Customer Address</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">City:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.city}">Customer City</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">State:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.state}">Customer State</p>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-3 col-form-label mr-2">Zip Code:</label>
+            <div class="col-8">
+                <p class="form-control-plaintext" th:text="${customer.zipCode}">Customer Zip Code</p>
+            </div>
+        </div>
+
+    </form>
+    <div class="row">
+        <a th:href="${'/customers'}">Back</a>
+    </div>
+</div>
+</body>
+</html>
