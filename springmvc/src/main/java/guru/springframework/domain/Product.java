@@ -1,6 +1,6 @@
 package guru.springframework.domain;
 
-public class Product {
+public class Product implements DomainObject{
     private Integer id;
     private String description;
     private double price;

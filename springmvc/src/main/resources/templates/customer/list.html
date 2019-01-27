@@ -17,11 +17,6 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
-                <th>Phone Number</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
                 <th>Options</th>
             </tr>
             <tr th:each="customer : ${customers}">
@@ -29,17 +24,8 @@
                 <td th:text="${customer.firstName}"></td>
                 <td th:text="${customer.lastName}"></td>
                 <td th:text="${customer.email}"></td>
-                <td th:text="${customer.phoneNumber}"></td>
                 <td>
-                    <span th:text="${customer.addressLineOne}"></span>
-                    <br>
-                    <span th:text="${customer.addressLineTwo}"></span>
-                </td>
-                <td th:text="${customer.city}"></td>
-                <td th:text="${customer.state}"></td>
-                <td th:text="${customer.zipCode}"></td>
-                <td>
-                    <a th:href="${'/customer/' + customer.id}">Details</a>
+                    <a th:href="${'/customer/show/' + customer.id}">Details</a>
                     <span> | </span>
                     <a th:href="${'/customer/edit/' + customer.id}">Edit</a>
                     <span> | </span>

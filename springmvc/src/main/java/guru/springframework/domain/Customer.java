@@ -1,6 +1,6 @@
 package guru.springframework.domain;
 
-public class Customer {
+public class Customer implements DomainObject {
     private Integer id;
     private String firstName;
     private String lastName;
